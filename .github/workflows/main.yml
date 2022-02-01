@@ -14,6 +14,6 @@ jobs:
         uses: actions/checkout@master
       - name: Build
         run: |
-          xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
+          xcodebuild clean archive -archivePath build/TestingCi -scheme TestingCi
 #         env: 
 #          destination: ${{ matrix.destination }}
