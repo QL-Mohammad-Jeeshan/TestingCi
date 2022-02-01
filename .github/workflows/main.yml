@@ -14,6 +14,6 @@ jobs:
         uses: actions/checkout@master
       - name: Build
         run: |
-          xcodebuild clean archive -archivePath build/TestingCi -scheme TestingCi
+          xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0'
 #         env: 
 #          destination: ${{ matrix.destination }}
