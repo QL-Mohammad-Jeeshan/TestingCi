@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestingCi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFj-Il-Mx0">
+                                <rect key="frame" x="151.5" y="434" width="111" height="38"/>
+                                <color key="backgroundColor" red="0.85594421629999995" green="0.77449625730000005" blue="0.4744556546" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" titleAlignment="center">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Click me">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="BtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z6k-j2-ta3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-QC-NsY">
+                                <rect key="frame" x="20" y="144" width="374" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="J1o-Et-B2v">
+                                <rect key="frame" x="20" y="208" width="374" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="0.88544656720649029" blue="0.78000732650626325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="J1o-Et-B2v" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="8Oi-Xk-n2A"/>
+                            <constraint firstItem="J1o-Et-B2v" firstAttribute="top" secondItem="eEb-QC-NsY" secondAttribute="bottom" constant="30" id="LVF-dI-G0J"/>
+                            <constraint firstItem="eEb-QC-NsY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OQL-fI-u8p"/>
+                            <constraint firstItem="eEb-QC-NsY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0379464" id="Oy6-U1-svW"/>
+                            <constraint firstItem="BFj-Il-Mx0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.268116" id="UY6-MZ-0KM"/>
+                            <constraint firstItem="BFj-Il-Mx0" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Zix-Hc-z2U"/>
+                            <constraint firstItem="J1o-Et-B2v" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0379464" id="cG2-Ld-R9b"/>
+                            <constraint firstItem="eEb-QC-NsY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="dEv-xQ-MlY"/>
+                            <constraint firstItem="eEb-QC-NsY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="i6T-VD-EJu"/>
+                            <constraint firstItem="BFj-Il-Mx0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lCs-hX-Noc"/>
+                            <constraint firstItem="J1o-Et-B2v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sHM-zm-5R6"/>
+                            <constraint firstItem="BFj-Il-Mx0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0424107" id="uLj-EZ-QlC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="47.544642857142854"/>
+        </scene>
+    </scenes>
+</document>
