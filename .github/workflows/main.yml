@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Build
+      - name: Test
         run: |
-          xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0'
-#         env: 
-#          destination: ${{ matrix.destination }}
+          xcodebuild clean test -project TestingCi.xcodeproj -scheme TestingCi -destination "${destination}" CODE_SIGN_IDENTITY="QL_Dist_Provisioning_Profile_28Jan_2022" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env: 
+         destination: ${{ matrix.destination }}
