@@ -11,4 +11,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: Choose Xcode
-        run: sudo Xcode-select -switch /Applications/Xcode_Version 13.1.app
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
