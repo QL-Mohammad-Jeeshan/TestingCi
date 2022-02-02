@@ -1,6 +1,9 @@
-name: 
+name: CI-CD
 
-on: [push]
+on: 
+  push:
+    tags:        
+      - Mj.**
 
 jobs:
   test:
