@@ -15,8 +15,7 @@ jobs:
       - name: Xcode version 
         run: /usr/bin/xcodebuild -version
       - name:  Build archive 
-        run: |
-          xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
+        run: xcodebuild clean test -project "TestingCi.xcodeproj" -scheme "TestingCi" -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest"
 #         run: |
 #           xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
 #           -configuration Debug -scheme TestingCi \
