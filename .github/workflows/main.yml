@@ -23,7 +23,7 @@ jobs:
           xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
       
       - name: Build Test
-        run : |
+        run: |
           echo "Your Build is Testing"
           xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
       
