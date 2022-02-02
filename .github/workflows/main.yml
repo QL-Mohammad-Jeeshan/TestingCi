@@ -14,3 +14,9 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
       - name: Xcode version 
         run: /usr/bin/xcodebuild -version
+      - name:  Build archive 
+        run: |
+          xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
+          - configuration Debug -scheme TestingCi \
+          - derivedDataPath DerivedData \
+          - archivePath DerivedData/Archive/TestingCi archive
