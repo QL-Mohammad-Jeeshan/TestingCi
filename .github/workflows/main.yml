@@ -15,10 +15,9 @@ jobs:
       - name: Xcode version 
         run: /usr/bin/xcodebuild -version
       - name:  Building
-        run:
-        - echo "2nd Script Executing"
-        - xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
-        - xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
+        run: |
+          xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
+          xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
 #         run: |
 #           xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
 #           -configuration Debug -scheme TestingCi \
