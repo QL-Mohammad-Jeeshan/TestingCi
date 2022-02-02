@@ -23,7 +23,7 @@ jobs:
 #           -configuration Debug -scheme TestingCi \
 #           -derivedDataPath DerivedData \
 #           -archivePath DerivedData/Archive/TestingCi archive
-jobs:
+
   build_test
     name: Build Test
     run-on: macos-latest
