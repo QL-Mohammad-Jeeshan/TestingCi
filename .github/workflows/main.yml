@@ -17,18 +17,20 @@ jobs:
       - name: Xcode version 
         run: /usr/bin/xcodebuild -version
         
-      - name:  Clean Build
+      - name: Build Clean
         run: |
           echo "Your Build Folder is Cleaning"
           xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
       
-      - name: Test Build
+      - name: Build Test
         run : |
           echo "Your Build is Testing"
           xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
-#         run: |
-#           xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
-#           -configuration Debug -scheme TestingCi \
-#           -derivedDataPath DerivedData \
-#           -archivePath DerivedData/Archive/TestingCi archive
+      
+      - name: Build Archive
+         run: |
+           xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
+           -configuration Debug -scheme TestingCi \
+           -derivedDataPath DerivedData \
+           -archivePath DerivedData/Archive/TestingCi archive
 
