@@ -17,6 +17,6 @@ jobs:
       - name:  Build archive 
         run: |
           xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
-          - configuration Debug -scheme TestingCi \
-          - derivedDataPath DerivedData \
-          - archivePath DerivedData/Archive/TestingCi archive
+          -configuration Debug -scheme TestingCi \
+          -derivedDataPath DerivedData \
+          -archivePath DerivedData/Archive/TestingCi archive
