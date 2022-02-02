@@ -10,15 +10,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+        
       - name: Choosing Xcode
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
+        
       - name: Xcode version 
         run: /usr/bin/xcodebuild -version
+        
       - name:  Clean Build
         run: |
-          echo "Your Build Folder is Cleaning, Please Wait.. (Mj)"
+          echo "Your Build Folder is Cleaning"
           xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
-          
+      
+      - name: Test Build
+        run : |
+          echo "Your Build is Testing"
+          xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
 #         run: |
 #           xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
 #           -configuration Debug -scheme TestingCi \
