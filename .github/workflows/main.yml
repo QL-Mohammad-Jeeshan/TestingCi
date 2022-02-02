@@ -10,5 +10,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Choose Xcode version
-	      run: echo "Working"
+      - name: Choose Xcode
+        run: |
+	sudo Xcode-select -switch /Applications/Xcode_Version 13.0.app
