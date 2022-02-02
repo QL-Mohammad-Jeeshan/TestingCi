@@ -29,7 +29,7 @@ jobs:
       
       - name: Build Archive
         run: |
-          xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
+          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
           -configuration Debug -scheme TestingCi \
           -derivedDataPath DerivedData \
           -archivePath DerivedData/Archive/TestingCi archive
