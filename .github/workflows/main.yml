@@ -14,8 +14,11 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
       - name: Xcode version 
         run: /usr/bin/xcodebuild -version
-      - name:  Build archive 
-        run: xcodebuild clean test -project "TestingCi.xcodeproj" -scheme "TestingCi" -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest"
+      - name:  Building
+        run:
+        - echo "2nd Script Executing"
+        - xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
+        - xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
 #         run: |
 #           xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
 #           -configuration Debug -scheme TestingCi \
