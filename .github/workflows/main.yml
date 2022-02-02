@@ -3,8 +3,8 @@ name: CI-CD (Demo)
 on: push
 
 jobs:
-  build_clean:
-    name: Build Clean
+  SingleJob:
+    name: Complete CI-CD Job
     runs-on: macos-latest
     
     steps:
@@ -14,29 +14,14 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
       - name: Xcode version 
         run: /usr/bin/xcodebuild -version
-      - name:  Build Cleaning
+      - name:  Clean Build
         run: |
-          echo "1st Job is Executing"
+          echo "Your Build Folder is Cleaning, Please Wait.. (Mj)"
           xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
+          
 #         run: |
 #           xcodebuild -sdk iphoneos -project TestingCi/TestingCi.xcodeproj \
 #           -configuration Debug -scheme TestingCi \
 #           -derivedDataPath DerivedData \
 #           -archivePath DerivedData/Archive/TestingCi archive
 
-  build_test
-    name: Build Test
-    run-on: macos-latest
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Choosing Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
-      - name: Xcode version
-        run: /usr/bin/xcodebuild -version
-      - name: Build Testing
-        run: |
-          echo "2nd Job is Executing"
-          xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
-          
