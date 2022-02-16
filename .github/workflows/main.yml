@@ -9,7 +9,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
         
       - name: Choosing Xcode
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
