@@ -36,6 +36,8 @@ jobs:
         run: chmod +x ./.github/secrets/decrypt_secrets.sh
         
       - name: Build Archive
+        env:
+          PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
         run: |
           xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
           -configuration Release -scheme TestingCi \
