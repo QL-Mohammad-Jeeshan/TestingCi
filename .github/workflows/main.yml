@@ -3,7 +3,7 @@ name: CI-CD (Demo)
 on: push
 
 jobs:
-  SingleJob:
+  deploy:
     name: Complete CI-CD Job
     runs-on: macos-latest
     
@@ -38,7 +38,7 @@ jobs:
       - name: Archiving Project
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: chmod 755 ./.github/scripts/archiveApp.sh
+        run: chmod +x ./.github/scripts/archiveApp.sh
 
 
 #          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
