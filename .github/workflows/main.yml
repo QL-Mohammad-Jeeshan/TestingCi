@@ -33,7 +33,7 @@ jobs:
       - name: Setup Provisioning Profile
         env:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
-        run: ./.github/scripts/decrypt_secrets.sh
+        run: ./.github/secrets/decrypt_secrets.sh
         
 #      - name: Build Archive
 #        run: |
