@@ -38,7 +38,7 @@ jobs:
       - name: Archiving Project
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: chmod +x ./.github/scripts/archiveApp.sh
+        run: chmod ./.github/scripts/archive_app.sh
 
 
 #          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
