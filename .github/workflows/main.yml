@@ -43,7 +43,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: artefact.zip
-          path: ./artefact.zip
+          path: path/to/artifact/artefact.zip
       
       - name: Exporting .ipa
         run: chmod 755 ./.github/scripts/export_app.sh
