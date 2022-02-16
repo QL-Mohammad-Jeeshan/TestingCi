@@ -33,15 +33,15 @@ jobs:
       - name: Setup Provisioning Profile
         env:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
-        run: ./.github/secrets/decrypt_secrets.sh
+        run: chmod 755 ./.github/secrets/decrypt_secrets.sh
         
       - name: Archiving project
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: ./.github/scripts/archive_app.sh
+        run: chmod 755 ./.github/scripts/archive_app.sh
       
       - name: Exporting .ipa
-        run: ./.github/scripts/export_ipa.sh
+        run: chmod 755 ./.github/scripts/export_app.sh
         
 #      - name: Archiving Project
 #        env:
