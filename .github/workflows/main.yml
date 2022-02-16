@@ -33,21 +33,21 @@ jobs:
       - name: Setup Provisioning Profile
         env:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
-        run: chmod 755 ./.github/secrets/decrypt_secrets.sh
+        run: chmod ./.github/secrets/decrypt_secrets.sh
         
       - name: Archiving project
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: chmod 755 ./.github/secrets/archiveApp.sh
+        run: chmod ./.github/secrets/archiveApp.sh
         
-      - name: Archiving Project
-        env:
-          PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: |
-          xcodebuild  -workspace TestingCi.xcworkspace \
-          -scheme TestingCi \
-          -sdk iphoneos \
-          -configuration Release \
-          -archivePath $PWD/build/TestingCi.xcarchive \
-          clean archive | xcpretty
+#      - name: Archiving Project
+#        env:
+#          PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+#        run: |
+#          xcodebuild  -workspace TestingCi.xcworkspace \
+#          -scheme TestingCi \
+#          -sdk iphoneos \
+#          -configuration Release \
+#          -archivePath $PWD/build/TestingCi.xcarchive \
+#          clean archive | xcpretty
 
