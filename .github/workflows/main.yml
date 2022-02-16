@@ -38,13 +38,7 @@ jobs:
       - name: Archiving Project
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: |
-          xcodebuild  -workspace TestingCi.xcworkspace \
-             -scheme TestingCi \
-             -sdk iphoneos \
-             -configuration Release \
-             -archivePath $PWD/build/TestingCi.xcarchive \
-             clean archive | xcpretty
+        run: chmod 755 ./.github/scripts/archiveApp.sh
 
 
 #          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
