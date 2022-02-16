@@ -27,10 +27,18 @@ jobs:
           echo "Your Build is Testing"
 #          xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
       
-      - name: Build Archive
-        run: |
-          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
-          -configuration Release -scheme TestingCi \
-          -derivedDataPath DerivedData \
-          -archivePath DerivedData/Archive/TestingCi archive
+      - name: Install gpg
+        run: brew install gnupg
+        
+      - name: Setup Provisioning Profile
+        env:
+          IOS_KEYS: ${{ secrets.IOS_KEYS }}
+        run: ./.github/secrets/decrypt_secrets.sh
+        
+#      - name: Build Archive
+#        run: |
+#          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
+#          -configuration Release -scheme TestingCi \
+#          -derivedDataPath DerivedData \
+#          -archivePath DerivedData/Archive/TestingCi archive
 
