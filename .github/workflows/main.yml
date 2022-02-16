@@ -39,11 +39,11 @@ jobs:
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
         run: |
-          xcodebuild -workspace Calculator.xcworkspace \
-          -scheme Calculator\ iOS \
+          xcodebuild -workspace TestingCi.xcworkspace \
+          -scheme TestingCi\ iOS \
           -sdk iphoneos \
           -configuration AppStoreDistribution \
-          -archivePath $PWD/build/Calculator.xcarchive \
+          -archivePath $PWD/build/TestingCi.xcarchive \
           clean archive | xcpretty
 #          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
 #          -configuration Debug -scheme TestingCi \

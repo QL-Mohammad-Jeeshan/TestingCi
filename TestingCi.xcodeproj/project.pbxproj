@@ -154,7 +154,6 @@
 				65B45C4933BF424DC225FC17 /* Pods-TestingCiTests.debug.xcconfig */,
 				0F1DC44B40DD39AD3DCA5EE4 /* Pods-TestingCiTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -589,7 +588,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8SZ27954MH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingCi/Info.plist;
@@ -622,7 +621,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8SZ27954MH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingCi/Info.plist;
