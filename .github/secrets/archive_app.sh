@@ -6,4 +6,3 @@ xcodebuild -workspace TestingCi.xcworkspace \
             -configuration AppStoreDistribution \
             -archivePath $PWD/build/TestingCi.xcarchive \
             clean archive | xcpretty
-view raw
