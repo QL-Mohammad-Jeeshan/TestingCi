@@ -35,17 +35,12 @@ jobs:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
         run: chmod +x ./.github/secrets/decrypt_secrets.sh
         
-      - name: Build Archive
+      - name: Archiving Project
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: |
-          - xcodebuild -project TestingCi.xcodeproj -scheme TestingCi -archivePath $PWD/build/TestingCi.xcarchive archive
-#          xcodebuild -workspace TestingCi.xcworkspace \
-#          -scheme TestingCi \
-#          -sdk iphoneos \
-#          -configuration AppStoreDistribution \
-#          -archivePath $PWD/build/TestingCi.xcarchive \
-#          clean archive | xcpretty
+        run: ./.github/scripts/archive_app.sh
+
+
 #          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
 #          -configuration Debug -scheme TestingCi \
 #          -derivedDataPath DerivedData \
