@@ -40,6 +40,10 @@ jobs:
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
         run: chmod 755 ./.github/scripts/archive_app.sh
+      - uses: actions/upload-artifact@v1
+        with:
+          name: artefact.zip
+          path: ./artefact.zip
       
       - name: Exporting .ipa
         run: chmod 755 ./.github/scripts/export_app.sh
