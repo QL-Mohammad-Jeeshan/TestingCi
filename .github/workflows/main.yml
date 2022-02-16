@@ -38,7 +38,7 @@ jobs:
       - name: Archiving project
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: chmod 755 ./.github/scripts/archive_app.sh
+        run: chmod 755 ./.github/secrets/archiveApp.sh
         
       - name: Archiving Project
         env:
