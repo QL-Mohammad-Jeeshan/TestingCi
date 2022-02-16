@@ -27,15 +27,10 @@ jobs:
           echo "Your Build is Testing"
           xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
       
-      - name: Bundle Install
-        run: bundle install
-        
-      - name: Build Archive & Upload
+      - name: Build Archive
         run: |
-          bundle exec fastlane betaLane
-#          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
-#          -configuration Debug -scheme TestingCi \
-#          -derivedDataPath DerivedData \
-#          -archivePath DerivedData/Archive/TestingCi archive
-#          xcodebuild -project TestingCi.xcodeproj -scheme TestingCi -archivePath /Path/To/Output/TestingCi.xcarchive archive
+          xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
+          -configuration Release -scheme TestingCi \
+          -derivedDataPath DerivedData \
+          -archivePath DerivedData/Archive/TestingCi archive
 
