@@ -443,6 +443,7 @@
 				DEVELOPMENT_TEAM = 8SZ27954MH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingCi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Testing CI";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -471,9 +472,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = P5YMX6QZ5J;
+				DEVELOPMENT_TEAM = 8SZ27954MH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingCi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Testing CI";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -487,7 +489,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.gitdemocicd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Demo CICD App";
+				PROVISIONING_PROFILE_SPECIFIER = QL_Dist_Provisioning_Profile_28Jan_2022;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

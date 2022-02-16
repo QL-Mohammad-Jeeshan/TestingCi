@@ -40,7 +40,7 @@ jobs:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
         run: |
           xcodebuild -sdk iphoneos -project TestingCi.xcodeproj \
-          -configuration Release -scheme TestingCi \
+          -configuration Debug -scheme TestingCi \
           -derivedDataPath DerivedData \
           -archivePath DerivedData/Archive/TestingCi archive
 
