@@ -35,23 +35,14 @@ jobs:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
         run: chmod +x ./.github/secrets/decrypt_secrets.sh
         
-      - name: Archive Build
-        uses: sparkfabrik/ios-build-action@v1.0.0
-        with:
-          project-path: TestingCi.xcworkspace
-          p12-base64: ${{ secrets.P12_BASE64 }}
-          mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
-          code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
-          team-id: ${{ secrets.TEAM_ID }}
-        
-#       - name: Archiving Project
-#         env:
-#           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-#         run: |
-#           xcodebuild  -workspace TestingCi.xcworkspace \
-#           -scheme TestingCi \
-#           -sdk iphoneos \
-#           -configuration Release \
-#           -archivePath $PWD/build/TestingCi.xcarchive \
-#           clean archive | xcpretty
+       - name: Archiving Project
+         env:
+           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+         run: |
+           xcodebuild  -workspace TestingCi.xcworkspace \
+           -scheme TestingCi \
+           -sdk iphoneos \
+           -configuration Release \
+           -archivePath $PWD/build/TestingCi.xcarchive \
+           clean archive | xcpretty
 
