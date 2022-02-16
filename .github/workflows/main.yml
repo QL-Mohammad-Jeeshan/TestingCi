@@ -43,9 +43,6 @@ jobs:
       - name: Exporting .ipa
         run: chmod 755 ./.github/scripts/export_app.sh
         
-      - name: Download Artifact
-        run: mkdir build_artifacts; export EXPO_ARTIFACT_URL=$(expo url:ipa); cURL $EXPO_ARTIFACT_URL --output ./build_artifacts/$(basename $EXPO_ARTIFACT_URL);
-        
       - name: Publishing App
         if: success()
         env:
