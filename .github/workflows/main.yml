@@ -29,6 +29,9 @@ jobs:
       
       - name: Install gpg
         run: brew install gnupg
+      
+      - name: Allow Permission
+        run: git update-index --chmod=+x ./.github/scripts/backend_decrypt.sh
         
       - name: Setup Provisioning Profile
         env:
