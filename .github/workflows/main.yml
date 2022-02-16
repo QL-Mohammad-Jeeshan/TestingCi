@@ -29,6 +29,9 @@ jobs:
       
       - name: Install gpg
         run: brew install gnupg
+        
+      - name: Make gradlew executable
+        run: chmod +x ./.github/secrets/decrypt_secrets.sh
       
       - name: Setup Provisioning Profile
         env:
