@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: mkdir -p path/to/artifact
+      - run: mkdir -p ./artifact
         
       - name: Choosing Xcode
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
@@ -43,7 +43,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: artefact.zip
-          path: path/to/artifact/artefact.zip
+          path: ./artefact.zip
       
       - name: Exporting .ipa
         run: chmod 755 ./.github/scripts/export_app.sh
