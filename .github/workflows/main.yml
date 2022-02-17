@@ -11,9 +11,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
-      - name: Create a temporary artifact downloads folder
-        run: mkdir downloads
-   
       - name: Choosing Xcode
         run: sudo xcode-select -switch /Applications/Xcode_13.1.app
         
@@ -36,7 +33,7 @@ jobs:
           project-path: TestingCi.xcodeproj
           scheme: TestingCi
           configuration: Debug
-          export-method: app-store
+          export-method: ad-hoc
           p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
           p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
