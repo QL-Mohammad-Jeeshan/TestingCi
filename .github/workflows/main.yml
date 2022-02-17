@@ -34,6 +34,9 @@ jobs:
         uses: yukiarrr/ios-build-action@v1.5.0
         with:
           project-path: TestingCi.xcodeproj
+          scheme: TestingCi
+          configuration: Release
+          export-method: ad-hoc
           p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
           p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
