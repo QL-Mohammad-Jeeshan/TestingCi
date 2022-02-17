@@ -43,14 +43,14 @@ jobs:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
         run: chmod 755 ./.github/scripts/archive_app.sh
         
+      - name: Exporting .ipa
+        run: chmod 755 ./.github/scripts/export_app.sh
+        
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: $PWD/build/TestingCi.xcarchive \
-      
-      - name: Exporting .ipa
-        run: chmod 755 ./.github/scripts/export_app.sh
+          path: $PWD/build
         
 #      - name: Publishing App
 #        if: success()
