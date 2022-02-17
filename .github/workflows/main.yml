@@ -29,22 +29,32 @@ jobs:
         run: |
           echo "Your Build is Testing"
 #          xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
+
+      - uses: yukiarrr/ios-build-action@v1.5.0
+        with:
+          project-path: TestingCi.xcodeproj
+          p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
+          p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
+          mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
+          code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
+          team-id: ${{ secrets.TEAM_ID }}
+          workspace-path: TestingCi.xcworkspace # optional
       
-      - name: Install gpg
-        run: brew install gnupg
-        
-      - name: Setup Provisioning Profile
-        env:
-          IOS_KEYS: ${{ secrets.IOS_KEYS }}
-        run: chmod 755 ./.github/secrets/decrypt_secrets.sh
-        
-      - name: Archiving project
-        env:
-          PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: chmod 755 ./.github/scripts/archive_app.sh
-        
-      - name: Exporting .ipa
-        run: chmod 755 ./.github/scripts/export_app.sh
+#      - name: Install gpg
+#        run: brew install gnupg
+#
+#      - name: Setup Provisioning Profile
+#        env:
+#          IOS_KEYS: ${{ secrets.IOS_KEYS }}
+#        run: chmod 755 ./.github/secrets/decrypt_secrets.sh
+#
+#      - name: Archiving project
+#        env:
+#          PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+#        run: chmod 755 ./.github/scripts/archive_app.sh
+#
+#      - name: Exporting .ipa
+#        run: chmod 755 ./.github/scripts/export_app.sh
         
 #      - name: Upload Artifact
 #        uses: actions/upload-artifact@v2
@@ -52,10 +62,10 @@ jobs:
 #          name: my-artifact
 #          path: $PWD/build/
           
-      - name: Upload App
-        if: success()
-        env:
-          APPLEID_USERNAME: ${{ secrets.APPLEID_USERNAME }}
-          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
-        run: chmod 755 ./.github/scripts/upload_app.sh
+#      - name: Upload App
+#        if: success()
+#        env:
+#          APPLEID_USERNAME: ${{ secrets.APPLEID_USERNAME }}
+#          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+#        run: chmod 755 ./.github/scripts/upload_app.sh
         
