@@ -51,6 +51,9 @@ jobs:
         with:
           name: my-artifact
           path: $PWD/build
+          
+      - name: Upload App
+        run: chmod 755 ./.github/scripts/upload_app.sh
         
 #      - name: Publishing App
 #        if: success()
