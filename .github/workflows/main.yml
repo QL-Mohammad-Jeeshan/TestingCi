@@ -41,10 +41,12 @@ jobs:
       - name: Archiving project
 #        env:
 #          PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: chmod 755 ./.github/scripts/archive_app.sh
+        run: |
+          xcodebuild clean -project TestingCi.xcodeproj -scheme TestingCi | xcpretty
+          chmod 755 ./.github/scripts/archive_app.sh
         
       - name: Upload Artifact
-      - uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: my-artifact
           path: $PWD/build/
