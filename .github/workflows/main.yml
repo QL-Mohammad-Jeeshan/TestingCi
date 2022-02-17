@@ -39,33 +39,23 @@ jobs:
         run: chmod 755 ./.github/secrets/decrypt_secrets.sh
         
       - name: Archiving project
-        run: |
-          xcodebuild  -workspace TestingCi.xcworkspace \
-          -scheme TestingCi \
-          -sdk iphoneos \
-          -configuration AppStoreDistribution  \
-          -archivePath $PWD/build/TestingCi.xcarchive \
-          clean archive | xcpretty
-#        env:
-#          PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-#        run: chmod 755 ./.github/scripts/archive_app.sh
+        env:
+          PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+        run: chmod 755 ./.github/scripts/archive_app.sh
         
       - name: Exporting .ipa
         run: chmod 755 ./.github/scripts/export_app.sh
         
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: $PWD/build/
+#      - name: Upload Artifact
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: my-artifact
+#          path: $PWD/build/
           
       - name: Upload App
+        if: success()
+        env:
+          APPLEID_USERNAME: ${{ secrets.APPLEID_USERNAME }}
+          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
         run: chmod 755 ./.github/scripts/upload_app.sh
         
-#      - name: Publishing App
-#        if: success()
-#        env:
-#          APPLEID_USERNAME: ${{ secrets.APPLEID_USERNAME }}
-#          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
-#        run: xcrun altool --upload-app -t ios -f $PWD/build/TestingCi.ipa -u "$APPLEID_USERNAME" -p "$APPLEID_PASSWORD" --verbose
-
