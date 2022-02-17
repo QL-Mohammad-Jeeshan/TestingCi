@@ -40,7 +40,7 @@ jobs:
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
-#          workspace-path: TestingCi.xcworkspace # optional
+          workspace-path: TestingCi.xcworkspace # optional
 
       
 #      - name: Install gpg
