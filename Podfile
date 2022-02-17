@@ -6,6 +6,7 @@ target 'TestingCi' do
   use_frameworks!
 
   # Pods for TestingCi
+  pod 'Firebase/Auth'
 
   target 'TestingCiTests' do
     inherit! :search_paths
@@ -17,3 +18,4 @@ target 'TestingCi' do
   end
 
 end
+
