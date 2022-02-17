@@ -26,6 +26,7 @@ jobs:
         run: |
           echo "Your Build is Testing"
           pod install
+          gem install fastlane
 #          xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
 
       - name: Build Archiving
