@@ -33,7 +33,7 @@ jobs:
       - name: Build Archiving
         uses: yukiarrr/ios-build-action@v1.4.0
         with:
-          project-path: ios/TestingCi.xcodeproj
+          project-path: TestingCi.xcodeproj
           scheme: TestingCi
           configuration: Release
           export-method: ad-hoc
