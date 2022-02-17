@@ -33,13 +33,18 @@ jobs:
           project-path: TestingCi.xcodeproj
           workspace-path: TestingCi.xcworkspace # optional
           scheme: TestingCi
-          configuration: Debug
-          export-method: ad-hoc
+          configuration: Release
+          export-method: app-store
           p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
           p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ipa
+          path: ./**.ipa
           
           
       
