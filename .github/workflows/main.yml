@@ -25,34 +25,22 @@ jobs:
       - name: Build Test
         run: |
           echo "Your Build is Testing"
-#          pod install
-#          gem install fastlane
 #          xcodebuild test -project TestingCi.xcodeproj -scheme TestingCi -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' | xcpretty -s
 
-#      - name: Build Archiving
-#        uses: yukiarrr/ios-build-action@v1.5.0
-#        with:
-#          project-path: TestingCi.xcodeproj
-#          scheme: TestingCi
-#          configuration: Debug
-#          export-method: ad-hoc
-#          p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
-#          p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
-#          mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
-#          code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
-#          team-id: ${{ secrets.TEAM_ID }}
-#          workspace-path: TestingCi.xcworkspace # optional
-          
-      - uses: sparkfabrik/ios-build-action@v1.2.0
+      - name: Build Archiving
+        uses: yukiarrr/ios-build-action@v1.5.0
         with:
           project-path: TestingCi.xcodeproj
+          scheme: TestingCi
+          configuration: Debug
+          export-method: ad-hoc
           p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
           p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
           workspace-path: TestingCi.xcworkspace # optional
-
+          
       
 #      - name: Install gpg
 #        run: brew install gnupg
